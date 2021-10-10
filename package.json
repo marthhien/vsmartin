@@ -11,6 +11,15 @@
 	"categories": [
 		"Other"
 	],
+	"icon": "vsmartin_icon.png",
+	"galleryBanner": {
+		"color": "#ACD1EC",
+		"theme": "light"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marthhien/vsmartin.git"
+	},
 	"activationEvents": [
 		"onCommand:extension.martin"
 	],
