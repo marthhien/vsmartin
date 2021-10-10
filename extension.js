@@ -150,7 +150,7 @@ function Copier() {
     if (selecttxt == '') {
           t.select();
           selecttxt = window.getSelection();
-          msgtxt = 'Toutes les lignes ont été copiée : ' + selecttxt.toString ();
+          msgtxt = 'Toutes les lignes ont été copiées : ' + selecttxt.toString ();
     }
 
   document.execCommand("copy");

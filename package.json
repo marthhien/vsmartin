@@ -4,7 +4,7 @@
 	"publisher": "marthhien",
 	"homepage": "https://github.com/marthhien",
 	"description": "Martin Visual Studio Code Extension",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.60.0"
 	},
@@ -21,8 +21,25 @@
 				"command": "extension.martin",
 				"title": "Lancer vsmartin"
 			}
-		]
-	},
+		],
+		"views": {
+			"marthhien-vsmartin": [
+			  {
+				"id": "marthhien-vsmartin",
+				"name": "Extension vsmartin"
+			  }
+			]
+		  },
+		  "viewsContainers": {
+			"activitybar": [
+			  {
+				"id": "marthhien-vsmartin",
+				"title": "Extension vsmartin",
+				"icon": "./vsmartin-icon.svg"
+			  }
+			]
+		  }
+		},
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
