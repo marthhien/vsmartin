@@ -264,52 +264,8 @@ document.getElementById("process2").innerText = s36;
 document.getElementById("process3").innerText = s37;
 document.getElementById("process4").innerText = s38;
 
-s39 = "Foreach ($i in 651..700) {";
-s40 = "$Num = ([string]$i).Padleft(5,'0')";
-s41 = "New-ADComputer -Name 'MVDI044-F$num' -SamAccountName 'MVDI044-F$num' -path 'OU=P044-F-ACCESDISTANT,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA' -Enabled $True";
-s42 = "}";
-document.getElementById("addad1").innerText = s39;
-document.getElementById("addad2").innerText = s40;
-document.getElementById("addad3").innerText = s41;
-document.getElementById("addad4").innerText = s42;
-
-s43 = "Foreach ($i in 669..671) {";
-s44 = "$Num = ([string]$i).Padleft(5,'0')";
-s45 = "Set-ADComputer -Identity MVDI044-F$num -Add @{'description'='1545301;Répondant, DGSSRI;repondantDGSSRI;Interne;Réseau;Installé;;Vacant;Environnement VDI;'}";
-s46 = "}";
-document.getElementById("adddesc1").innerText = s43;
-document.getElementById("adddesc2").innerText = s44;
-document.getElementById("adddesc3").innerText = s45;
-document.getElementById("adddesc4").innerText = s46;
-
-s47 = "Get-ADComputer -Filter * -Properties Name, Description, lastlogontimestamp -SearchBase 'OU=P044-F-ACCESDISTANT,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA' |Select Name, Description,@{N='lastlogontimestamp'; E={[DateTime]::FromFileTime($_.lastlogontimestamp)}} | Sort-Object Name -Descending| Out-GridView | Get-ADComputer -Filter * -Properties Name, Description, lastlogontimestamp -SearchBase 'OU=P046-F-ACCESDISTANT_DEVL,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA' |Select Name, Description,@{N='lastlogontimestamp'; E={[DateTime]::FromFileTime($_.lastlogontimestamp)}} | Sort-Object Name -Descending| Out-GridView";
-document.getElementById("listevm1").innerText = s47;
-
-s48 = "If (Get-ADComputer -Filter * -Properties * -SearchBase 'OU=P044-F-ACCESDISTANT,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA'|where-object {$_.Description -like '*" + usr.value + "*'}  -OutVariable Liste) {$Liste | Select-Object CN, Description | Sort-Object CN | Out-GridView} Else{Write-Host 'Aucune VM pour " + usr.value + "' -fore red}";
-s49 = "If (Get-ADComputer -Filter * -Properties * -SearchBase 'OU=P046-F-ACCESDISTANT_DEVL,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA'|where-object {$_.Description -like '*" + usr.value + "*'}  -OutVariable Liste) {$Liste | Select-Object CN, Description | Sort-Object CN | Out-GridView} Else{Write-Host 'Aucune VM pour " + usr.value + "' -fore red}";
-document.getElementById("dejavm1").innerText = s48;
-document.getElementById("dejavm2").innerText = s49;
-
-s50 = "Get-ADComputer -Filter * -Properties * -SearchBase 'OU=P044-F-ACCESDISTANT,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA' |where-object {$_.Description -like '*Vacant*'} | Select-Object CN | Sort-Object CN | Out-GridView";
-s51 = "Get-ADComputer -Filter * -Properties * -SearchBase 'OU=P046-F-ACCESDISTANT_DEVL,OU=Full_Clone,OU=_Postes,OU=VDI,OU=MIN,DC=MTQ,DC=MIN,DC=INTRA' |where-object {$_.Description -like '*Vacant*'} | Select-Object CN | Sort-Object CN | Out-GridView";
-document.getElementById("vacant1").innerText = s50;
-document.getElementById("vacant2").innerText = s51;
-
-s52 = "Set-COVIDVM -NT '" + usr.value + "' -Commentaire '" + inc.value + "'";
-s53 = "Set-COVIDVM -NT '" + usr.value + "' -Commentaire '" + inc.value + "' -DEV";
-s54 = "Set-HorizonVM -NT '" + usr.value + "' -NomVM '" + ord.value + "' -Commentaire '" + inc.value + "'";
-s55 = "Set-HorizonVM -NT '" + usr.value + "' -NomVM '" + ord.value + "' -Commentaire '" + inc.value + "' -LocalAdmin";
-s56 = "Set-HorizonVM '" + ord.value + "' -Liberer -Rebuild";
-s57 = "Set-HorizonVM -NT '" + usr.value + "' -NomVM '" + ord.value + "' -Commentaire '" + inc.value + "' -DateFin '" + y + "-" + m + "-" + d + "' -LocalAdmin";
-document.getElementById("setcovid1").innerText = s52;
-document.getElementById("setcovid2").innerText = s53;
-document.getElementById("setcovid3").innerText = s54;
-document.getElementById("setcovid4").innerText = s55;
-document.getElementById("setcovid5").innerText = s56;
-document.getElementById("setcovid6").innerText = s57;
-
-s58 = "(Get-Module -ListAvailable).path";
-document.getElementById("pwsh1").innerText = s58;
+s40 = "(Get-Module -ListAvailable).path";
+document.getElementById("pwsh1").innerText = s40;
 
 document.getElementById("cmdpwsh").value = "Commande Powershell";
 
@@ -331,7 +287,6 @@ document.documentElement.scrollTop = 0;
 
 <div class='div1' align='left'><div class='div2' align='left'><p style='margin-top=8'></p>
 
-<input type="text" class="input0" id="inc" value="Billet Easyvista" size=190><p style='margin-top=-20'></p>
 <input type="text" class="input1" id="usr" value="Utilisateur" size=219><p style='margin-top=-20'></p>
 <input type="text" class="input2" id="ord" value="Poste" size=219><p style='margin-top=-20'></p>
 <a href="#" onclick="Fixervaleurdescmd()"><u><font color=darkblue size=4>Actualiser</font></u></a><br><br><br>
@@ -428,49 +383,6 @@ document.documentElement.scrollTop = 0;
 <p id="process2"></p>
 <p id="process3"></p>
 <p id="process4"></p>
-</div><br>
-
-<font color=darkgreen># Créer les comptes dans l'AD</font><br><p style='margin-top=-18'></p>
-<div id="addad" onclick="Cliquecmd('addad')">
-<p id="addad1"></p>
-<p id="addad2"></p>
-<p id="addad3"></p>
-<p id="addad4"></p>
-</div><br>
-
-<font color=darkgreen># Ajouter la description dans l'AD</font><br><p style='margin-top=-18'></p>
-<div id="adddesc" onclick="Cliquecmd('adddesc')">
-<p id="adddesc1"></p>
-<p id="adddesc2"></p>
-<p id="adddesc3"></p>
-<p id="adddesc4"></p>
-</div><br>
-
-<font color=darkgreen># Liste des VM</font><br><p style='margin-top=-18'></p>
-<div id="listevm" onclick="Cliquecmd('listevm')">
-<p id="listevm1"></p>
-</div><br>
-
-<font color=darkgreen># Déjà un VM ?</font><br><p style='margin-top=-18'></p>
-<div id="dejavm" onclick="Cliquecmd('dejavm')">
-<p id="dejavm1"></p>
-<p id="dejavm2"></p>
-</div><br>
-
-<font color=darkgreen># Vacant</font><br><p style='margin-top=-18'></p>
-<div id="vacant" onclick="Cliquecmd('vacant')">
-<p id="vacant1"></p>
-<p id="vacant2"></p>
-</div><br>
-
-<font color=darkgreen># Assigner une VM</font><br><p style='margin-top=-18'></p>
-<div id="setcovid" onclick="Cliquecmd('setcovid')">
-<p id="setcovid1"></p>
-<p id="setcovid2"></p>
-<p id="setcovid3"></p>
-<p id="setcovid4"></p>
-<p id="setcovid5"></p>
-<p id="setcovid6"></p>
 </div><br>
 
 <font color=darkgreen># Modules</font><br><p style='margin-top=-18'></p>
