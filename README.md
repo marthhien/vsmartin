@@ -4,7 +4,7 @@ vsmartin is a VS Code Extension in js witch display a html Webview
 
 ## Installation
 
-Install from VISX or copy the repository into %USERPROFILE%\.vscode\extensions\vsmartin folder.
+Install from VISX or copy the repository into %USERPROFILE%\\.vscode\extensions\vsmartin folder.
 
 ## Usage
 
