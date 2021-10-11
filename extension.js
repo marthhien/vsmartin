@@ -214,7 +214,7 @@ s17 = "$userOU";
 document.getElementById("usrou1").innerText = s16;
 document.getElementById("usrou2").innerText = s17;
 
-s18 = "Invoke-Command -ComputerName '" + ord.value + "' -ScriptBlock{Get-LocalGroupMember -Name 'Administrateurs'} | Select-Object -Property Name | Out-GridView"; 
+s18 = "Invoke-Command -ComputerName '" + ord.value + "' -ScriptBlock{Get-LocalGroupMember -Name 'Administrateurs'} | Select-Object -Property Name"; 
 document.getElementById("adm1").innerText = s18;
 
 s19 = "Get-WmiObject Win32_LogicalDisk -ComputerName '" + ord.value + "'"; 
@@ -237,7 +237,7 @@ s27 = "$MemberOf2 = get-aduser $User2 -Properties MemberOf | Select -ExpandPrope
 s28 = "$Compare = Compare-Object $MemberOf1 $MemberOf2 -includeequal"; 
 s29 = "$Compare | foreach { $_.InputObject = $_.InputObject.Substring(0, $_.InputObject.IndexOf(','))"; 
 s30 = "if ($_.SideIndicator -eq '') {$_.SideIndicator = $User2} }"; 
-s31 = "$Compare | Out-GridView"; 
+s31 = "$Compare"; 
 document.getElementById("comp1").innerText = s24;
 document.getElementById("comp2").innerText = s25;
 document.getElementById("comp3").innerText = s26;
@@ -248,7 +248,7 @@ document.getElementById("comp7").innerText = s30;
 document.getElementById("comp8").innerText = s31;
 
 s32 = "$KBlist = Get-Hotfix -ComputerName '" + ord.value + "' | Select HotFixID"; 
-s33 = "$KBlist | Out-GridView"; 
+s33 = "$KBlist"; 
 document.getElementById("kb1").innerText = s32;
 document.getElementById("kb2").innerText = s33;
 
