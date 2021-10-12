@@ -10,7 +10,8 @@ const vscode = require('vscode');
  */
 
  function activate(context) {
-	context.subscriptions.push(   
+	context.subscriptions.push(  
+    
 		vscode.commands.registerCommand(
 			'extension.martin', () => {
 				// Create and show a new webview
@@ -41,7 +42,7 @@ const vscode = require('vscode');
 			  })
 			);
   }
-
+  
   function getWebviewContent() {
 	return `<!DOCTYPE html>
   <html lang="en">

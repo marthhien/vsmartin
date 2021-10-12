@@ -25,12 +25,6 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "extension.martin",
-				"title": "Lancer vsmartin"
-			}
-		],
 		"views": {
 			"marthhien-vsmartin": [
 			  {
@@ -39,7 +33,23 @@
 			  }
 			]
 		  },
-		  "viewsContainers": {
+		"viewsWelcome": [
+			{
+		  "view": "marthhien-vsmartin",
+			  "contents": "Bienvenue dans vsmartin \n [https://github.com/marthhien](https://github.com/marthhien)"	
+			}
+		  ],
+		"commands": [
+			{
+				"command": "extension.martin",
+				"title": "Lancer vsmartin"
+			},
+			{
+				"command": "vsmartin-practice.registerDataProvider",
+				"title": "TreeView DataProvider"
+			}			
+		],
+		"viewsContainers": {
 			"activitybar": [
 			  {
 				"id": "marthhien-vsmartin",
