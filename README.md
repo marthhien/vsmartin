@@ -20,9 +20,7 @@ Start Debugging F5 or copy the repository into %USERPROFILE%\\.vscode\extensions
 - Click on desire commands, select code and click "Copier"
 - Paste into Terminal
 
-## Screenshots
-
-![image-20211006150319680](image-20211006150319680.png)
+## Screenshot
 
 ![image-20211006150443033](image-20211006150443033.png)
 
