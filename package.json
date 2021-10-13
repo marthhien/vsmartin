@@ -36,7 +36,7 @@
 		"viewsWelcome": [
 			{
 		  "view": "marthhien-vsmartin",
-			  "contents": "Bienvenue dans vsmartin \n [https://github.com/marthhien](https://github.com/marthhien)"	
+			  "contents": "Bienvenue dans vsmartin \n [https://github.com/marthhien](https://github.com/marthhien) \n [Ouvrir](command:extension.martin)"	
 			}
 		  ],
 		"commands": [
