@@ -36,7 +36,7 @@
 		"viewsWelcome": [
 			{
 		  "view": "marthhien-vsmartin",
-			  "contents": "Bienvenue dans vsmartin \n [https://github.com/marthhien](https://github.com/marthhien) \n [Ouvrir](command:extension.martin)"	
+			  "contents": "Bienvenue dans vsmartin \n [https://github.com/marthhien](https://github.com/marthhien) \n [Ouvrir (Ctrl+Alt+M)](command:extension.martin)"	
 			}
 		  ],
 		"commands": [
@@ -48,6 +48,12 @@
 				"command": "vsmartin-practice.registerDataProvider",
 				"title": "TreeView DataProvider"
 			}			
+		],
+		"keybindings" : [
+			{
+				"command": "extension.martin",
+				"key": "ctrl+alt+m"
+			}
 		],
 		"viewsContainers": {
 			"activitybar": [
